@@ -1,37 +1,20 @@
 var bubble;
+var nozzle;
 
 function setup() {
   createCanvas(640, 360);
+  nozzle = new Nozzle(width/2, height);
   bubble = new Bubble(320, 180);
   // for (var i = 0; i < 10; i++) {
   //   particles[i] = new Particle(200+20*i, 50, i);
   // }
 }
 
-// function mousePressed() {
-//   var p = new Particle(mouseX, mouseY, random(2, 4));
-//   particles.push(p);
-// }
-//
-// function keyPressed() {
-//   if (key == ' ') {
-//     particles.splice(0, 1);
-//   }
-// }
 
 function draw() {
   background(225, 229, 237);
-  // var wind = createVector(0.1, 0);
 
-  // for (var i = 0; i < particles.length; i++) {
-  //   var gravity = createVector(0, 0.2 * particles[i].mass);
-  //   particles[i].applyForce(gravity);
-  //
-  //   if (mouseIsPressed) {
-  //     particles[i].applyForce(wind);
-  //   }
-    bubble.update();
-    bubble.display();
-  // }
-
+  nozzle.display();
+  bubble.update();
+  bubble.display();
 }

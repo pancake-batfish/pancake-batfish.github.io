@@ -1,15 +1,13 @@
-function Particle(x, y, m) {
+function Bubble(x, y) {
   this.pos = createVector(x, y);
   this.vel = createVector(0, 0);
-  this.acc = createVector(0, 0);
-  this.mass = m;
-  this.colorR = random(255);
-  this.colorG = random(255);
-  this.colorB = random(255);
+  this.acc = createVector(0, -1);
+  this.diameter = 10;
+  // this.mass = m;
 
   this.applyForce = function(force) {
     var f = force.copy();
-    f.div(this.mass);
+    // f.div(this.mass);
     this.acc.add(f);
   }
 
@@ -20,23 +18,10 @@ function Particle(x, y, m) {
   }
 
   this.display = function() {
-    fill(this.colorR, this.colorG, this.colorBc);
-    ellipse(this.pos.x, this.pos.y, this.mass*10, this.mass*10);
+    noStroke();
+    fill(94, 144, 224, 50);
+    ellipse(this.pos.x, this.pos.y, this.diameter, this.diameter);
   }
 
-  this.edges = function() {
-    if (this.pos.y > height) {
-      this.vel.y *= -1;
-      this.pos.y = height;
-    } else if (this.pos.x > width) {
-      this.vel.x *= -1;
-      this.pos.x = width;
-    } else if (this.pos.y < 0) {
-      this.vel.y *= -1;
-      this.pos.y = 0;
-    } else if (this.pos.x < 0) {
-      this.vel.x *= -1;
-      this.pos.x = 0;
-    }
-  }
+
 }

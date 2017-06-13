@@ -1,14 +1,13 @@
-function Nozzle(x, yLower) {
-  //yLower is middle of lower edge
-  var y = yLower - 3;
+function Nozzle(x, y) {
   this.pos = createVector(x, y);
-
+  this.xRadius = 25;
+  this.yRadius = 6;
 
 
   this.display = function() {
-    rectMode(CENTER);
-    // noStroke();
+    rectMode(RADIUS);
+    noStroke();
     fill(135, 50);
-    rect(this.pos.x, this.pos.y, 40, 6);
+    rect(this.pos.x, this.pos.y, this.xRadius, this.yRadius);
   }
 }

@@ -1,15 +1,18 @@
-function Bubble(x, y) {
+function Bubble(nozzle) {
+  var x = random(nozzle.pos.x - nozzle.xRadius, nozzle.pos.x + nozzle.xRadius);
+  var y = nozzle.pos.y;
+
   this.pos = createVector(x, y);
   this.vel = createVector(0, 0);
   this.acc = createVector(0, -1);
   this.diameter = 10;
   // this.mass = m;
 
-  this.applyForce = function(force) {
-    var f = force.copy();
-    // f.div(this.mass);
-    this.acc.add(f);
-  }
+  // this.applyForce = function(force) {
+  //   var f = force.copy();
+  //   f.div(this.mass);
+  //   this.acc.add(f);
+  // }
 
   this.update = function() {
     this.vel.add(this.acc);

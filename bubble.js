@@ -1,6 +1,6 @@
 function Bubble(nozzle) {
   var x = random(nozzle.pos.x - nozzle.xRadius, nozzle.pos.x + nozzle.xRadius);
-  var y = nozzle.pos.y;
+  var y = nozzle.pos.y - nozzle.yRadius;
   var drift = random(-0.4, .4);
 
   this.pos = createVector(x, y);

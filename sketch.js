@@ -13,6 +13,7 @@ function draw() {
   makeBubble(nozzle1);
   makeBubble(nozzle2);
 
+  nozzle1.update();
   nozzle1.display();
   nozzle2.display();
   for (var i = 0; i < bubbles.length; i++) {

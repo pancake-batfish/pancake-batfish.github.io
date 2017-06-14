@@ -1,16 +1,20 @@
 var bubbles = [];
-var nozzle;
+var nozzle1;
+var nozzle2;
 
 function setup() {
-  createCanvas(640, 360);
-  nozzle = new Nozzle(width/2, height);
+  createCanvas(windowWidth, windowHeight);
+  nozzle1 = new Nozzle(width/3, height);
+  nozzle2 = new Nozzle(2 * width/3, height);
 }
 
 function draw() {
   background(225, 229, 237);
-  makeBubble(nozzle);
+  makeBubble(nozzle1);
+  makeBubble(nozzle2);
 
-  nozzle.display();
+  nozzle1.display();
+  nozzle2.display();
   for (var i = 0; i < bubbles.length; i++) {
     bubbles[i].update();
     bubbles[i].display();
@@ -19,7 +23,7 @@ function draw() {
 }
 
 function makeBubble(nozzle) {
-  if (random() < .3) {
+  if (random() < .4) {
     bubbles.push(new Bubble(nozzle));
   }
 }

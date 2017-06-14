@@ -10,4 +10,5 @@ function Nozzle(x, y) {
     fill(135, 100);
     rect(this.pos.x, this.pos.y, this.xRadius, this.yRadius);
   }
+  
 }

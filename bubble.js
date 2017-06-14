@@ -6,7 +6,7 @@ function Bubble(nozzle) {
   this.pos = createVector(x, y);
   this.vel = createVector(0, 0);
   this.acc = createVector(drift, -1);
-  this.diameter = random(1,15);
+  this.diameter = random(2,18);
   // this.mass = m;
 
   // this.applyForce = function(force) {

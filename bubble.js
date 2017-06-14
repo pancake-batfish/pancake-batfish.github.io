@@ -1,11 +1,12 @@
 function Bubble(nozzle) {
   var x = random(nozzle.pos.x - nozzle.xRadius, nozzle.pos.x + nozzle.xRadius);
   var y = nozzle.pos.y;
+  var drift = random(-0.4, .4);
 
   this.pos = createVector(x, y);
   this.vel = createVector(0, 0);
-  this.acc = createVector(0, -1);
-  this.diameter = 10;
+  this.acc = createVector(drift, -1);
+  this.diameter = random(1,15);
   // this.mass = m;
 
   // this.applyForce = function(force) {

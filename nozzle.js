@@ -7,7 +7,7 @@ function Nozzle(x, y) {
   this.display = function() {
     rectMode(RADIUS);
     noStroke();
-    fill(135, 50);
+    fill(135, 100);
     rect(this.pos.x, this.pos.y, this.xRadius, this.yRadius);
   }
 }

@@ -6,7 +6,9 @@ function Nozzle(x, y) {
   this.update = function() {
     if (mouseIsPressed == true) {
       // var mouse = createVector(mouseX, mouseY)
-      this.pos.x = mouseX;
+      if (mouseX + this.xRadius < width && mouseX - this.xRadius > 0) {
+        this.pos.x = mouseX;
+      }
     }
   }
   this.display = function() {

@@ -98,6 +98,33 @@
           </div>
         </li>
 
+        <li class="accordion-item" data-accordion-item>
+          <a href="#" class="accordion-title">Starting out</a>
+          <div class="accordion-content" data-tab-content>
+            <p>So far, I have used p5.js to make a couple of sketches. The library provides a setup function, which defines initial conditions, including a canvas area within the browser; within that frame, a draw function executes repeatedly (I believe the default is 60 times a second) until the program is stopped, allowing for animation.</p>
+
+            <p>Following the models in <em>The Nature of Code</em>, I learned to create a template for a JavaScript object where p5.js vectors store the position, velocity, and acceleration of each instance. I can simulate the effects of a force on these objects, writing a formula to determine how the simulated force affects the acceleration.</p>
+
+            <p>One trial sketch features bubbles that rise from a nozzle (for interest, I ended up putting in two nozzles).</p>
+
+            <p>The bubbles are generated within the draw function of the main sketch by a makeBubble function that effectively serves to control the pace of new bubble creation with a call to a random number function — if the value is under a certain threshold (currently .4, which should average out to 40% of the time), the function will make a new Bubble object and push it onto the sketch’s array of bubbles. (Without this function, the bubbles are generated too quickly and are too dense on the screen.) A clearBubbles function removes bubbles from the array once their position is beyond the boundaries of the canvas.</p>
+
+            <p>Bubbles can have a diameter varying randomly from 2 to 18, endpoints I picked based on what I found visually satisfying. Each bubble has an initial acceleration upwards, and a small randomly varying drift to the left or right. There’s definitely room for elaboration on this buoyant force upwards — it could vary based on bubble size or the density of the imagined liquid in which the bubbles are rising.</p>
+
+            <p>Right now, I have each bubble associated with a nozzle at its creation — I’m not sure if this is a smart relationship or not. The nozzle position determines the boundaries within which the bubble’s initial position can be created. I decided to try randomly assigning a different bubble color to each nozzle, so this logic is inside the nozzle object and is passed to the bubble at creation, which seems a little weird. One of the nozzles can be moved to different positions at the bottom of the screen by clicking the mouse, which makes interesting effects by changing where the bubbles are created. I should improve this by writing code that allows either nozzle to be dragged to a new position with the mouse.</p>
+
+            <p>Finally, I tried applying a current to the sketch when any key is pressed, driving bubbles to the right. I made the force proportional to the volume of the bubble, so the current accelerates the larger bubbles more — this could definitely be explored a bit more. I also tried applying the current only within a certain strata of the liquid (i.e., on bubbles with a y position within certain bounds.)</p>
+
+
+            <h4 class="subhead">Some early questions</h4>
+            <p>I can see that one general design question centers on all the possible factors to change and the somewhat limited array of ways that a user might interact with the sketch to change it.  In this relatively simple sketch, you could conceivably alter the maximum, minimum, or distribution of bubble size, as well as the rate of bubble generation, or assignment of bubble color; you could change a variety of things about the current including its magnitude, direction, and the area where it was present. The sketch could be elaborated so that new nozzles could be created, and positioned vertically or in other ways besides along the bottom level of the canvas. The simulated density of the liquid could be changed.</p>
+
+            <p>In playing with some of the sketches (in Processing) from the book <a class="inline" href="http://www.generative-gestaltung.de/" target="_blank">Generative Design</a>, I could see that the authors of the book’s code examples opted to place some information about controls in the comments at the head of their Processing files. They used left and right mouse clicks, shift + mouse click, click + drag, and various assignment of keyboard keys. They tried to be consistent across many sketches with certain assignments, such as 's' to save a screenshot from the sketch and 'r' to reset the sketch to some initial state. In addition, many sketches included a collapsed menu at the upper left of the screen that could be clicked to display an array of slider bars and check boxes to control many other aspects of the sketch — number of layers, spacing of grid points, strength of attractors, and so on, depending on the underlying variables within the sketch. These sketches were so complex that the authors called them ‘tools’. It seems as though they envisioned an audience of artist-coders who would want the possibility of control over every aspect of the sketch (and who would be willing to either play around or look at the underlying code to understand what features such as “attractor function twirl” or “nodedamping” might be.)</p>
+
+            <p>For my purposes, however, I see that I might want to narrow down how many aspects of the sketch are available to manipulate. I’d like to be as unobtrusive as possible in explaining how the controls work, so it would be nice if some of them just made intuitive sense based on how most users expect a mouse or arrow keys to work, and a limited number of other options could be communicated in a subtle way. The practice of keeping certain expectations for interaction consistent across many sketches also seems ideal.</p>
+          </div>
+        </li>
+
 
       </ol>
     </div>

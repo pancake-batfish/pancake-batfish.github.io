@@ -6,7 +6,8 @@ var anticurrent;
 
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(600, 400);
+  // createCanvas(windowWidth, windowHeight);
   // createCanvas(displayWidth, displayHeight);
   nozzle1 = new Nozzle(width/3, height);
   nozzle2 = new Nozzle(2 * width/3, height);
@@ -56,6 +57,7 @@ function makeBubble(nozzle) {
 
 function clearBubbles() {
   for (var i = bubbles.length-1; i >= 0; i--) {
+    console.log(bubbles[i]);
     if (bubbles[i].pos.x > width || bubbles[i].pos.x < 0) {
       bubbles.splice(i, 1);
     }

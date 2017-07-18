@@ -107,6 +107,8 @@
 
             <p>One trial sketch features bubbles that rise from a nozzle (for interest, I ended up putting in two nozzles).</p>
 
+            <iframe src="../bubbles/index.html" width="600px" height="400px"></iframe>
+
             <p>The bubbles are generated within the draw function of the main sketch by a makeBubble function that effectively serves to control the pace of new bubble creation with a call to a random number function — if the value is under a certain threshold (currently .4, which should average out to 40% of the time), the function will make a new Bubble object and push it onto the sketch’s array of bubbles. (Without this function, the bubbles are generated too quickly and are too dense on the screen.) A clearBubbles function removes bubbles from the array once their position is beyond the boundaries of the canvas.</p>
 
             <p>Bubbles can have a diameter varying randomly from 2 to 18, endpoints I picked based on what I found visually satisfying. Each bubble has an initial acceleration upwards, and a small randomly varying drift to the left or right. There’s definitely room for elaboration on this buoyant force upwards — it could vary based on bubble size or the density of the imagined liquid in which the bubbles are rising.</p>
@@ -136,6 +138,9 @@
 
   </div>
 
+
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/js/foundation.min.js" integrity="sha256-Nd2xznOkrE9HkrAMi4xWy/hXkQraXioBg9iYsBrcFrs=" crossorigin="anonymous"></script> -->
 
   <script src="../js/vendor/jquery.js"></script>
   <script src="../js/vendor/foundation.js"></script>

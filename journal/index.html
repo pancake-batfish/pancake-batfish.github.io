@@ -1,7 +1,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto|Roboto+Condensed|Roboto+Slab" rel="stylesheet">
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/css/foundation.min.css" integrity="sha256-itWEYdFWzZPBG78bJOOiQIn06QCgN/F0wMDcC4nOhxY=" crossorigin="anonymous" /> -->
   <link rel="stylesheet" href="../css/foundation.css" />
   <link rel="stylesheet" href="../css/main.css" />
@@ -30,7 +30,7 @@
       <p id="title">Accidental ant farm</p>
     </div>
     <nav>
-      <a href="../index.html">Home</a>
+      <a class="nav" href="../index.html">Home</a>
     </nav>
   </header>
   <!-- <div class="row">
@@ -40,11 +40,65 @@
 
       <ol class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
         <li class="accordion-item" data-accordion-item>
-          <a href="#" class="accordion-title">Backstory</a>
+          <a href="#" class="accordion-title">Test</a>
           <div class="accordion-content" data-tab-content>
             <p>holy crap this was more complicated than it seems like it should have been</p>
           </div>
         </li>
+
+        <li class="accordion-item" data-accordion-item>
+          <a href="#" class="accordion-title">Backstory</a>
+          <div class="accordion-content" data-tab-content>
+            <h4 class="subhead">Beer</h4>
+            <p>I was having some beers with my friend Tom, a graphic designer — he had designed several issues of the magazine for ARCADE, a Seattle nonprofit focused on architecture and design. At the launch for one of the issues, he told me they’d projected this mesmerizing coding project onto a big screen with tiny triangles flocking like birds, and he hadn’t been able to stop staring at it the whole night.</p>
+
+            <p>He found the online issue on his phone: it included a version of the project, by Scott Thiessen, which accompanied an article called <a class="inline" target="_blank" href="http://arcadenw.org/article/algorithms-emergence-and-the-unexpected-movement-of-triangles">Algorithms, Emergence, and the Unexpected Movement of Triangles.</a></p>
+
+            <p>Even at smartphone size, it was totally, peculiarly mesmerizing. The components are simple: within a white frame on the web page, small blue-green isoceles triangles move around; the points of their triangle tips always lead in the direction of their motion. Although there is no single dominant direction, there are prevailing currents or trends, with the triangles sometimes clustering into larger aggregations moving together and sometimes breaking off into smaller groups.</p>
+
+            <p>The triangles don’t move like rockets, or like ping-pong balls: they drift and change, and something happens each time one cluster encounters another; there’s a little quiver at each triangle’s tip, a little bumping and jostling, and the whole group seems to take on a new idea of which direction to head. Resist it as you will, it is hard not to think of the triangles as creatures — although they have no features, their motion animates them. There’s definitely a pattern, but not a predictable pattern, and the net effect is captivating and beautiful.</p>
+
+
+            <h4 class="subhead">Boids</h4>
+            <p>The next day, I looked at Thiessen’s article more closely. The caption of his animation reads, “A live implementation of Craig Reynolds’ 'Boids' algorithm, simulating the flocking behavior of birds.” He’d made triangles that flock: why was it so cool?</p>
+
+            <p>Thiessen mentioned a real-life experience watching a murmuration of starlings: the way thousands of birds can seem like one connected and moving entity. He described his own fascination with someone else’s visualization of flocking and taking apart to code to see what it was doing.</p>
+
+            <p>What it wasn’t doing was directing the flock as a whole. All it did was give each little triangle a set of rules or desires: all the mesmerization and murmuration derived from the patterns that emerged. Crediting Reynolds and his algorithm from 1986, Thiessen laid out the rules: each triangle wants to aim in a similar direction to its neighbors. It wants to move close to them, but there’s a limit to how close it wants to be. That was it. Thiessen’s takeaway was this: “Cultivating beautiful work sometimes requires that we take our hands off the wheel and let the systems at play unfold.”</p>
+
+            <h4 class="subhead">The Nature of Code</h4>
+            <p>I found Scott Thiessen’s site: he works at Belle &#38; Wissell in Seattle as a developer, making digital interactives for museums and other venues, but he also describes himself as a “creative coder.” This was a new idea for me: coding as a tool for making something expressive rather than something functional.</p>
+
+            <p>His site included several links to things he was interested in, including a book by Daniel Shiffman, available online, called <a class="inline" href="http://natureofcode.com/book/preface/" target="_blank">The Nature of Code</a>. I was crazy excited as I started looking at it — around midmorning, I sent my friend Tom a link with absolutely zero explanation, since it seemed obvious to me how stupendous it was. Yesterday, I was tipsily wishing for a way to learn more about a beautiful thing — today, it turns out, there’s a whole textbook on just exactly that thing!</p>
+
+            <p>It included a whole chapter on objects like boids and behaviors like flocking, which Shiffman grouped under the category of “autonomous agents.” He led up to this kind of modeling of life — allowing objects “to make decisions about their movements according to their understanding of their environment” — with some basic tools for coding motion and forces in individual objects and then systems of objects. Beyond autonomous agents, the book offered some other starting points for using code to model natural systems, including the idea of applying the concepts of biological evolution to make code objects that evolve.</p>
+
+            <p>Code objects that evolve! I don’t remember what else I read that day, but later in the afternoon I did send Tom another note that just said, “I went down the rabbit hooooooole.”</p>
+
+            <h4 class="subhead">Maybe Computer Science Isn’t What I Think It Is</h4>
+            <p>In the distant past, I applied to be a graduate student under Mitchel Resnick at the MIT Media Lab. I got an on-site interview — probably due to the peculiar but compelling recommendation from my idiosyncratic former boss at the Eli Whitney Museum, a place originally conceived as an interpreted historical site, but reimagined by him as a hands-on experimental learning workshop in the spirit of Eli Whitney and technical innovation. I bombed the interview and didn’t get a slot; it was also a weakness that at the time, I had built some web sites but really did not know how to code.</p>
+
+            <p>Resnick’s research group, enchantingly called Lifelong Kindergarten, wasn’t primarily focused on coding, but they were extremely focused on rapid prototyping, with coding skills as a means to building and playing with manifestations of the ideas they were thinking about. After the Eli Whitney Museum, I had worked at a larger science museum in Birmingham, Alabama, and in both places had spent time thinking about successful informal education experiences and working with and watching kids engaged with things they could manipulate that made them think.</p>
+
+            <p>He and his lab have gone on to do so many more spectacular things, but at the time I particularly loved something Resnick’s group had published about the <a class="inline" href="http://web.media.mit.edu/~mres/papers/black-box/BBB-paper.htm" target="_blank">“chocolate walk.”</a> In Boston, in the winter, they gave small computational devices of their own design called Crickets, with temperature sensors, to a group of fifth-grade girls; the group walked to a donut shop, touching the sensors to lampposts and other objects along the way. At the donut shop, they all got hot chocolate and touched their sensors to the hot cups all at the same time. At the end of the walk, they uploaded the data from their sensors and plotted and compared their graphs, seeing the shared spike from the hot chocolate and then examining the differences from each girl’s particular walk and experimentation with touching different objects.</p>
+
+            <p>Incidentally, Resnick, in 1994, also published a book called <em>Turtles, Termites, and Traffic Jams</em>, about decentralized systems and computers as tools for exploring such systems. It explores, among other things...the movements of flocking birds.</p>
+
+            <p>Resnick is beyond a doubt a bona fide computer scientist, with a Ph.D. from MIT, but I can see that his thinking and research opened a kind of window for me into what computer science could be about: not just about the technology and what it could do, but about ideas and the way technology could help you explore and express them, and especially about the realm in which learning and insight were the aims and technology was a means.</p>
+
+            <h4 class="subhead">I Need a Project, and I Meet Scott</h4>
+            <p>Earlier this year, I left a job as an acquisitions editor at the University of Washington Press to learn to code at the <a class="inline" href="https://adadevelopersacademy.org/" target="_blank">Ada Developers Academy</a>. As the culmination of the program’s classroom time, before transitioning to an internship, I knew I would need to come up with an individual month-long project.</p>
+
+            <p>I was enchanted with the whole area of simulating natural systems, but completely uncertain how to pitch it as a capstone. What problem did such a thing solve? How should I defend devoting time to building something mesmerizing but purposeless?</p>
+
+            <p>Ultimately, I reached out to Scott Thiessen in hopes that, having explored further than I had and being a more experienced developer, he could help me define a project that would fly with my instructors. We had a really wonderful coffee. He told me that he thought this natural systems stuff was the most exciting thing happening; sharing his enthusiasm made me realize that I didn’t care if my project was practical or made sense, I was just really into it and wanted to spend my month diving deeper, playing with these ideas and tools and seeing what happened. Scott did suggest that making an interesting or successful project might hinge on how a user interacted with whatever I built, which was a useful way of thinking about it, and he told me about the dream projects he would like to have time to play with and build. But really, I think I went in seeking practical tips and came out instead with the happiness of shared delight and a renewed commitment to the impractical.</p>
+
+            <p>So I pitched to my instructors that I would spend my month playing in JavaScript and the p5.js library, exploring some of the categories of system sketched out by Shiffman in <em>The Nature of Code</em> and iterating different versions and ways that users could interact with them until I had something beautiful and interesting.</p>
+
+          </div>
+        </li>
+
+
       </ol>
     </div>
 
@@ -54,7 +108,7 @@
     </div>
 
   </div>
-  
+
 
   <script src="../js/vendor/jquery.js"></script>
   <script src="../js/vendor/foundation.js"></script>

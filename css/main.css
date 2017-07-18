@@ -1,17 +1,36 @@
+/*font-family: 'Roboto Slab', serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Roboto Condensed', sans-serif;*/
+
+/*green #859e4b
+serious red #e02716
+less serious red #c42415*/
+/*--------------------------
+typography
+---------------------------*/
 #title {
   font-family: 'Permanent Marker', cursive;
 }
-
 a {
+  color: #859e4b;
+}
+a.nav {
   font-family: 'Permanent Marker', cursive;
   text-decoration: none;
   color: black;
 }
-
 a:hover {
-  color: red;
+  color: #e02716;
 }
-
+h1, h2, h3, h4 {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+p, a.inline {
+  font-family: 'Roboto', sans-serif;
+}
+/*--------------------------
+header
+---------------------------*/
 header {
   display: flex;
   justify-content: space-between;

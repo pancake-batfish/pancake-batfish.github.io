@@ -1,0 +1,216 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto|Roboto+Condensed|Roboto+Slab" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/css/foundation.min.css" integrity="sha256-itWEYdFWzZPBG78bJOOiQIn06QCgN/F0wMDcC4nOhxY=" crossorigin="anonymous" /> -->
+  <link rel="stylesheet" href="../css/foundation.css" />
+  <link rel="stylesheet" href="../css/main.css" />
+  <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script> -->
+  <!-- <script src="../js/vendor/jquery.js"></script>
+  <script src="../js/vendor/foundation.js"></script>
+  <script src="../js/vendor/what-input.js"></script>
+  <script src="../js/app.js"></script> -->
+
+  <!-- <script src= -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/js/foundation.min.js" integrity="sha256-Nd2xznOkrE9HkrAMi4xWy/hXkQraXioBg9iYsBrcFrs=" crossorigin="anonymous"></script> -->
+  <!-- <script language="javascript" type="text/javascript" src="libraries/p5.js"></script> -->
+  <!-- uncomment lines below to include extra p5 libraries -->
+  <!--<script language="javascript" src="libraries/p5.dom.js"></script>-->
+  <!-- <script language="javascript" src="libraries/p5.sound.js"></script> -->
+
+
+  <!-- this line removes any default padding and style. you might only need one of these values set. -->
+  <style> body {padding: 0; margin: 0;} </style>
+  <title>About</title>
+</head>
+
+<body>
+  <header>
+    <div>
+      <p id="title">Accidental ant farm</p>
+    </div>
+    <nav>
+      <a class="nav" href="../index.html">Home</a>
+    </nav>
+  </header>
+  <!-- <div class="row">
+    <div class="journal small-12 medium-8 columns"> -->
+  <div class="grid-x grid-padding-x">
+    <div class="large-8 medium-8 small-12 cell">
+
+      <ol class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
+        <!-- <li class="accordion-item" data-accordion-item>
+          <a href="#" class="accordion-title">Test</a>
+          <div class="accordion-content" data-tab-content>
+            <p>holy crap this was more complicated than it seems like it should have been</p>
+          </div>
+        </li> -->
+
+        <li class="accordion-item" data-accordion-item>
+          <a href="#" class="accordion-title">Backstory</a>
+          <div class="accordion-content" data-tab-content>
+            <h4 class="subhead">Beer</h4>
+            <p>I was having some beers with my friend Tom, a graphic designer — he had designed several issues of the magazine for ARCADE, a Seattle nonprofit focused on architecture and design. At the launch for one of the issues, he told me they’d projected this mesmerizing coding project onto a big screen with tiny triangles flocking like birds, and he hadn’t been able to stop staring at it the whole night.</p>
+
+            <p>He found the online issue on his phone: it included a version of the project, by Scott Thiessen, which accompanied an article called <a class="inline" target="_blank" href="http://arcadenw.org/article/algorithms-emergence-and-the-unexpected-movement-of-triangles">Algorithms, Emergence, and the Unexpected Movement of Triangles.</a></p>
+
+            <p>Even at smartphone size, it was totally, peculiarly mesmerizing. The components are simple: within a white frame on the web page, small blue-green isoceles triangles move around; the points of their triangle tips always lead in the direction of their motion. Although there is no single dominant direction, there are prevailing currents or trends, with the triangles sometimes clustering into larger aggregations moving together and sometimes breaking off into smaller groups.</p>
+
+            <p>The triangles don’t move like rockets, or like ping-pong balls: they drift and change, and something happens each time one cluster encounters another; there’s a little quiver at each triangle’s tip, a little bumping and jostling, and the whole group seems to take on a new idea of which direction to head. Resist it as you will, it is hard not to think of the triangles as creatures — although they have no features, their motion animates them. There’s definitely a pattern, but not a predictable pattern, and the net effect is captivating and beautiful.</p>
+
+
+            <h4 class="subhead">Boids</h4>
+            <p>The next day, I looked at Thiessen’s article more closely. The caption of his animation reads, “A live implementation of Craig Reynolds’ 'Boids' algorithm, simulating the flocking behavior of birds.” He’d made triangles that flock: why was it so cool?</p>
+
+            <p>Thiessen mentioned a real-life experience watching a murmuration of starlings: the way thousands of birds can seem like one connected and moving entity. He described his own fascination with someone else’s visualization of flocking and taking apart to code to see what it was doing.</p>
+
+            <p>What it wasn’t doing was directing the flock as a whole. All it did was give each little triangle a set of rules or desires: all the mesmerization and murmuration derived from the patterns that emerged. Crediting Reynolds and his algorithm from 1986, Thiessen laid out the rules: each triangle wants to aim in a similar direction to its neighbors. It wants to move close to them, but there’s a limit to how close it wants to be. That was it. Thiessen’s takeaway was this: “Cultivating beautiful work sometimes requires that we take our hands off the wheel and let the systems at play unfold.”</p>
+
+            <h4 class="subhead">The Nature of Code</h4>
+            <p>I found Scott Thiessen’s site: he works at Belle &#38; Wissell in Seattle as a developer, making digital interactives for museums and other venues, but he also describes himself as a “creative coder.” This was a new idea for me: coding as a tool for making something expressive rather than something functional.</p>
+
+            <p>His site included several links to things he was interested in, including a book by Daniel Shiffman, available online, called <a class="inline" href="http://natureofcode.com/book/preface/" target="_blank">The Nature of Code</a>. I was crazy excited as I started looking at it — around midmorning, I sent my friend Tom a link with absolutely zero explanation, since it seemed obvious to me how stupendous it was. Yesterday, I was tipsily wishing for a way to learn more about a beautiful thing — today, it turns out, there’s a whole textbook on just exactly that thing!</p>
+
+            <p>It included a whole chapter on objects like boids and behaviors like flocking, which Shiffman grouped under the category of “autonomous agents.” He led up to this kind of modeling of life — allowing objects “to make decisions about their movements according to their understanding of their environment” — with some basic tools for coding motion and forces in individual objects and then systems of objects. Beyond autonomous agents, the book offered some other starting points for using code to model natural systems, including the idea of applying the concepts of biological evolution to make code objects that evolve.</p>
+
+            <p>Code objects that evolve! I don’t remember what else I read that day, but later in the afternoon I did send Tom another note that just said, “I went down the rabbit hooooooole.”</p>
+
+            <h4 class="subhead">Maybe Computer Science Isn’t What I Think It Is</h4>
+            <p>In the distant past, I applied to be a graduate student under Mitchel Resnick at the MIT Media Lab. I got an on-site interview — probably due to the peculiar but compelling recommendation from my idiosyncratic former boss at the Eli Whitney Museum, a place originally conceived as an interpreted historical site, but reimagined by him as a hands-on experimental learning workshop in the spirit of Eli Whitney and technical innovation. I bombed the interview and didn’t get a slot; it was also a weakness that at the time, I had built some web sites but really did not know how to code.</p>
+
+            <p>Resnick’s research group, enchantingly called Lifelong Kindergarten, wasn’t primarily focused on coding, but they were extremely focused on rapid prototyping, with coding skills as a means to building and playing with manifestations of the ideas they were thinking about. After the Eli Whitney Museum, I had worked at a larger science museum in Birmingham, Alabama, and in both places had spent time thinking about successful informal education experiences and working with and watching kids engaged with things they could manipulate that made them think.</p>
+
+            <p>He and his lab have gone on to do so many more spectacular things, but at the time I particularly loved something Resnick’s group had published about the <a class="inline" href="http://web.media.mit.edu/~mres/papers/black-box/BBB-paper.htm" target="_blank">“chocolate walk.”</a> In Boston, in the winter, they gave small computational devices of their own design called Crickets, with temperature sensors, to a group of fifth-grade girls; the group walked to a donut shop, touching the sensors to lampposts and other objects along the way. At the donut shop, they all got hot chocolate and touched their sensors to the hot cups all at the same time. At the end of the walk, they uploaded the data from their sensors and plotted and compared their graphs, seeing the shared spike from the hot chocolate and then examining the differences from each girl’s particular walk and experimentation with touching different objects.</p>
+
+            <p>Incidentally, Resnick, in 1994, also published a book called <em>Turtles, Termites, and Traffic Jams</em>, about decentralized systems and computers as tools for exploring such systems. It explores, among other things...the movements of flocking birds.</p>
+
+            <p>Resnick is beyond a doubt a bona fide computer scientist, with a Ph.D. from MIT, but I can see that his thinking and research opened a kind of window for me into what computer science could be about: not just about the technology and what it could do, but about ideas and the way technology could help you explore and express them, and especially about the realm in which learning and insight were the aims and technology was a means.</p>
+
+            <h4 class="subhead">I Need a Project, and I Meet Scott</h4>
+            <p>Earlier this year, I left a job as an acquisitions editor at the University of Washington Press to learn to code at the <a class="inline" href="https://adadevelopersacademy.org/" target="_blank">Ada Developers Academy</a>. As the culmination of the program’s classroom time, before transitioning to an internship, I knew I would need to come up with an individual month-long project.</p>
+
+            <p>I was enchanted with the whole area of simulating natural systems, but completely uncertain how to pitch it as a capstone. What problem did such a thing solve? How should I defend devoting time to building something mesmerizing but purposeless?</p>
+
+            <p>Ultimately, I reached out to Scott Thiessen in hopes that, having explored further than I had and being a more experienced developer, he could help me define a project that would fly with my instructors. We had a really wonderful coffee. He told me that he thought this natural systems stuff was the most exciting thing happening; sharing his enthusiasm made me realize that I didn’t care if my project was practical or made sense, I was just really into it and wanted to spend my month diving deeper, playing with these ideas and tools and seeing what happened. Scott did suggest that making an interesting or successful project might hinge on how a user interacted with whatever I built, which was a useful way of thinking about it, and he told me about the dream projects he would like to have time to play with and build. But really, I think I went in seeking practical tips and came out instead with the happiness of shared delight and a renewed commitment to the impractical.</p>
+
+            <p>So I pitched to my instructors that I would spend my month playing in JavaScript and the p5.js library, exploring some of the categories of system sketched out by Shiffman in <em>The Nature of Code</em> and iterating different versions and ways that users could interact with them until I had something beautiful and interesting.</p>
+
+          </div>
+        </li>
+
+        <li class="accordion-item" data-accordion-item>
+          <a href="#" class="accordion-title">Starting out</a>
+          <div class="accordion-content" data-tab-content>
+            <p>So far, I have used p5.js to make a couple of sketches. The library provides a setup function, which defines initial conditions, including a canvas area within the browser; within that frame, a draw function executes repeatedly (I believe the default is 60 times a second) until the program is stopped, allowing for animation.</p>
+
+            <p>Following the models in <em>The Nature of Code</em>, I learned to create a template for a JavaScript object where p5.js vectors store the position, velocity, and acceleration of each instance. I can simulate the effects of a force on these objects, writing a formula to determine how the simulated force affects the acceleration.</p>
+
+            <p>One trial sketch features bubbles that rise from a nozzle (for interest, I ended up putting in two nozzles).</p>
+
+            <iframe src="../bubbles/index.html" width="600px" height="400px"></iframe>
+
+            <p>The bubbles are generated within the draw function of the main sketch by a makeBubble function that effectively serves to control the pace of new bubble creation with a call to a random number function — if the value is under a certain threshold (currently .4, which should average out to 40% of the time), the function will make a new Bubble object and push it onto the sketch’s array of bubbles. (Without this function, the bubbles are generated too quickly and are too dense on the screen.) A clearBubbles function removes bubbles from the array once their position is beyond the boundaries of the canvas.</p>
+
+            <p>Bubbles can have a diameter varying randomly from 2 to 18, endpoints I picked based on what I found visually satisfying. Each bubble has an initial acceleration upwards, and a small randomly varying drift to the left or right. There’s definitely room for elaboration on this buoyant force upwards — it could vary based on bubble size or the density of the imagined liquid in which the bubbles are rising.</p>
+
+            <p>Right now, I have each bubble associated with a nozzle at its creation — I’m not sure if this is a smart relationship or not. The nozzle position determines the boundaries within which the bubble’s initial position can be created. I decided to try randomly assigning a different bubble color to each nozzle, so this logic is inside the nozzle object and is passed to the bubble at creation, which seems a little weird. One of the nozzles can be moved to different positions at the bottom of the screen by clicking the mouse, which makes interesting effects by changing where the bubbles are created. I should improve this by writing code that allows either nozzle to be dragged to a new position with the mouse.</p>
+
+            <p>Finally, I tried applying a current to the sketch when any key is pressed, driving bubbles to the right. I made the force proportional to the volume of the bubble, so the current accelerates the larger bubbles more — this could definitely be explored a bit more. I also tried applying the current only within a certain strata of the liquid (i.e., on bubbles with a y position within certain bounds.)</p>
+
+
+            <h4 class="subhead">Some early questions</h4>
+            <p>I can see that one general design question centers on all the possible factors to change and the somewhat limited array of ways that a user might interact with the sketch to change it.  In this relatively simple sketch, you could conceivably alter the maximum, minimum, or distribution of bubble size, as well as the rate of bubble generation, or assignment of bubble color; you could change a variety of things about the current including its magnitude, direction, and the area where it was present. The sketch could be elaborated so that new nozzles could be created, and positioned vertically or in other ways besides along the bottom level of the canvas. The simulated density of the liquid could be changed.</p>
+
+            <p>In playing with some of the sketches (in Processing) from the book <a class="inline" href="http://www.generative-gestaltung.de/" target="_blank">Generative Design</a>, I could see that the authors of the book’s code examples opted to place some information about controls in the comments at the head of their Processing files. They used left and right mouse clicks, shift + mouse click, click + drag, and various assignment of keyboard keys. They tried to be consistent across many sketches with certain assignments, such as 's' to save a screenshot from the sketch and 'r' to reset the sketch to some initial state. In addition, many sketches included a collapsed menu at the upper left of the screen that could be clicked to display an array of slider bars and check boxes to control many other aspects of the sketch — number of layers, spacing of grid points, strength of attractors, and so on, depending on the underlying variables within the sketch. These sketches were so complex that the authors called them ‘tools’. It seems as though they envisioned an audience of artist-coders who would want the possibility of control over every aspect of the sketch (and who would be willing to either play around or look at the underlying code to understand what features such as “attractor function twirl” or “nodedamping” might be.)</p>
+
+            <p>For my purposes, however, I see that I might want to narrow down how many aspects of the sketch are available to manipulate. I’d like to be as unobtrusive as possible in explaining how the controls work, so it would be nice if some of them just made intuitive sense based on how most users expect a mouse or arrow keys to work, and a limited number of other options could be communicated in a subtle way. The practice of keeping certain expectations for interaction consistent across many sketches also seems ideal.</p>
+          </div>
+        </li>
+
+        <li class="accordion-item" data-accordion-item>
+          <a href="#" class="accordion-title">Little twitchy creatures</a>
+          <div class="accordion-content" data-tab-content>
+            <p>I’ve built my own little flocking flock of creatures now, following Daniel Shiffman’s models, which are in turn built off Craig Reynolds’s algorithms.</p>
+
+            <iframe src="../creatures/index.html" width="600px" height="500px"></iframe>
+
+            <p>This let me see how to write functions for some of Reynolds’s steering behaviors, such as seeking a target (where the object steers towards a target while correcting for its existing velocity) or arriving at a target (where the object will slow down as it nears the target to avoid overshooting). Other behaviors involve having the object consider its relationship to other nearby objects: in the function, I pass each boid or bird or bat or bug the array of all the other objects. Within the set of those that meet the parameter I define for being “nearby”, the object can steer to stay separated from them (calculating a vector opposite to the position of each nearby neighbor and steering in the direction of an average of these vectors weighted by neighbor distance) or to stay close to them (steering toward the average of neighbors’ positions, or more precisely, calling the seek function with the average position as the target). It can also align with the travel of nearby objects by steering in the direction of their average velocity.</p>
+
+            <p>These last three more collectively-calculated actions are the underlying components of the flocking behavior. A master function handles applying all three self-calculated forces to each object in the system, and when they’re in good counterpoint to one another, the system will start with creatures with uncoordinated velocities but quickly manifests coordinated, aligned groups that may break off from one another and change but still seem ordered and organized.</p>
+
+            <p>It’s relatively easy to add sliders on the screen to change how each force is weighted and thus pose some questions to the system. Q: What happens if the little creatures care more about being separated than about being aligned? A: In my implementation, all the little creatures get kind of twitchy and confused about which way they’re heading and they don’t form much of a flock. Q: What happens if their desire for cohesion exceeds all other desires? A: If you haven’t written any code to prevent it, you get big silly clumps of little creatures on top of one another because they all just want to be where all the other ones are.</p>
+
+            <p>Currently, when you refresh the browser, the sliders are also reset — ideally, it’d be good to be able to restart the system with a user's chosen weighting for the behaviors to see it play out from an initial random distribution. Also, there’s a few other values that it might be nice to be able to alter from the browser (rather than just changing the hard-coded values in the code), including the maximum creature speed and the total number of creatures in the system. The effect of each of the collective functions hinges on a value that determines the distance at which another object is considered a “neighbor” and is factored into the calculation, and it might be nice to be able to play easily with these values as well.</p>
+
+            <h4 class="subhead">Some other thoughts</h4>
+            <p>When I first started playing with these tools, I didn’t understand at all how to make a shape like a triangle travel in the direction of its point! Once I could see from the code examples how to do it, I realized there was a whole (cool) area of p5.js I needed to learn more about: it lets you make transformations of the underlying coordinate system when drawing to avoid having to do the (ugly) math of rendering moving, spinning objects on a fixed grid. You can translate the origin to be wherever would be convenient, and rotate to a convenient orientation — in other words, you don’t make the little triangle point in the direction it’s moving; you rotate space so that “straight ahead” is the relevant direction. It’s lovely.</p>
+
+            <p>In general, though, I’m seeing that I should stay simple with the design of the creatures I’m trying to render, even though I tend to imagine wildly about what I want to make. In some ways, I think effects such as flocking are less hypnotic with too much going on with the objects. (I spent a stupid amount of time giving mine little oscillating wings, and I’m feeling like I might prefer just watching triangles.) My skills in computational drawing are currently limited but not really my focus for this project, so staying “big, bold and graphic” will also keep me more focused on exploring the behaviors of these systems and the possibilities for interacting with them rather than learning more about how to render.</p>
+
+            <p>Now I want to implement some behaviors I haven’t seen models for!</p>
+          </div>
+        </li>
+
+        <li class="accordion-item" data-accordion-item>
+          <a href="#" class="accordion-title">Ants and noise</a>
+          <div class="accordion-content" data-tab-content>
+            <p>This <a class="inline" href="http://ngm.nationalgeographic.com/2007/07/swarms/miller-text/2" target="_blank">National Geographic article on “Swarm Theory”</a> suggested something to try next. The research it describes on red harvester ants in the Arizona desert proposes that ants inside the nest decide whether or not to go foraging outside the nest based on how frequently they encounter other ants returning (successfully) from foraging.</p>
+
+            <p>What I pictured seemed relatively simple: some ants inside a nest, some ants outside the nest, some available food for them to find. I started with a wander behavior, for which I needed to learn more about using Perlin noise, a computer graphics technique for producing more naturalistic textures for which Ken Perlin won an <a class="inline" href="http://mrl.nyu.edu/~perlin/doc/oscar.html" target="_blank">Oscar for Technical Achievement</a>. Perlin noise can also be used to create random-feeling yet still smooth motion; each successive value bears some relationship to the previous value rather than being truly, jarringly random. This part was already pretty satisfying — the ants when they’re moving look like…ants! Now I am starting to wonder if actual ants are tuned in somehow to Perlin noise.</p>
+
+            <p>As I started to dive deeper into the model, I realized I needed to do much more than I thought to make it work. The ants need to know if they’re in the nest or not, and they can’t cross the boundary of the nest unintentionally. They need to find food, pick it up, and come back to the nest with it, and then interact with each other to decide whether or not to go back out again. At this point I have ants seeking out the food and heading for the nest but then getting trapped in limbo, stuttering in back-and-forth motion because I haven’t turned off their behavior of seeking the food. So…back to it!</p>
+
+
+            <h4 class="subhead">Ecologist advice</h4>
+            <p>I told my classmate Erica about my project. She has a Ph.D. in ecology, and the ideas reminded her of some tools they’d used to simulate predator and prey relationships once upon a time in one of her classes. She remembered one in particular where rabbits ate grass and wolves or some other predator ate the rabbits. The simulated animals could only go so long without eating before they’d die, and once the grass ran out it was bad news for the rabbits (and subsequently for the wolves.) She’d programmed her version so the rabbits would go cannibalistic after the grass ran out, just to see how long that might extend the run of the simulation.</p>
+
+            <p>She also remembered a model related to creating corridors to connect fragmented wildlife habitat, in which habitat areas of different sizes were connected by straws and predators could move from one to another.</p>
+
+            <p>Immediately Erica wanted to see systems with stochastic elements introduced to make them interesting, possibly from real world natural patterns. For sure, creatures should die off, she said. And users should be able, ideally, to compare the results of one set of parameters to another, possibly through side-by-side graphs. And then there should be bees! That dance and communicate information to each other! I look forward to showing her something I’ve actually built to see what ideas she has for how to elaborate on it.</p>
+          </div>
+        </li>
+
+        <li class="accordion-item" data-accordion-item>
+          <a href="#" class="accordion-title">Baby's First Code Review!</a>
+          <div class="accordion-content" data-tab-content>
+            <p>Sometimes, for my own entertainment, I imagine someone keeping a baby book for me that extends far beyond the time limit in which babies and their accomplishments are generally considered interesting. Recent pages include “Baby’s First Ice Axe!” Future pages await for “Baby’s First Colonoscopy!”</p>
+
+            <p>So — not that my instructors haven’t looked at my code before, but this feels like the first time Kari’s looked at something she hasn’t herself fundamentally structured through the terms of an assignment. She’d agreed to do a review for me to help me meet my learning goal of working toward writing clean, well-structured code, and I came to a stopping point with my ants simulation, where I wanted to step back and think about how I’d organized it before elaborating it further.</p>
+
+            <p>It’s lovely — it is much more like an editor-author relationship than I had imagined. I see that she is stumbling where my intent wasn’t clear — and I see the kind of focus required to go in and read someone else’s code resembles the state of mind of reading a manuscript.</p>
+
+            <p>I’ve been delighting in and yet struggling with an idea I see in places like JavaScript: The Good Parts, by Douglas Crockford — he insists that JavaScript is a “very expressive” language.</p>
+
+            <p>What does that even mean, for a computer language to be expressive? And yet, when Kari’s reading my code, I realize I have tried to express something. And she’s trying to perceive what I’ve expressed. And my code sometimes accomplishes that and sometimes obscures it.</p>
+
+            <p>I’m still a relatively inexperienced object-oriented programmer, and I can see that the first way I tried giving different responsibilities to different objects can be improved. I have an ant object (and a colony object to help manage all the ants), and a nest object, and so there’s several options for how to write a function that detects where an ant is with respect to the nest — should the ant know the dimensions of the nest and when it has crossed them? Or is it better (Kari says yes) to pass the nest information about the ant and let the nest decide if the ant is inside or outside? There’s also conventions I’ve picked up from the tutorials I’ve been using that aren’t necessarily self-evident to a blank-slate observer, so it’s great to be challenged to think about them more objectively and whether I really want to adopt them or if I should try to establish a more clear and less convention-driven way of implementing the same code.</p>
+
+            <h4 class="subhead">Making p5.js play “extra nice”</h4>
+
+            <p>I’ve also taken some time to work on how I’m going to present this project — I’d started by using Jekyll, a tool for quickly generating static pages, as a way of quickly posting my code journal entries, but some experimentation and reading suggests that I might have an easier time just building my own journal page to join with my p5.js projects rather than making Jekyll work with the other things I’m trying to do. This also led to some initial exploration of how p5.js interacts with other objects on the page (through a special library for manipulating elements on the web page) and some recommendations from the p5.js wiki for how to make p5.js behave well in conjunction with other JavaScript libraries or when you want to use more than one sketch on a page at the same time. Essentially, the most approachable and simple way of using p5.js involves creating functions that are global — meaning they are accessible anywhere, rather than tucked away just inside the parts of the code that need them. If you want to stop, as the contributors to p5.js put it, “polluting the global namespace,” you can tuck your p5.js code inside a special p5 object and reduce your pollution.</p>
+
+            <p>I need to play a bit with the p5 tools for creating web page elements. For example, I’d kind of like my ants to just crawl right across my header with title and links, or at the least make them visible through a transparent header, but initial attempts suggest that there’s something I don’t yet understand about where the objects p5 is drawing fit within the hierarchy of the page. Either I’m not going about making things transparent in the right way, or it might be that I have to use the p5 tools for making my html in order to get the effect I want. We’ll see…</p>
+          </div>
+        </li>
+
+
+      </ol>
+    </div>
+
+    <!-- <div class="gallery small-12 medium-4 columns"> -->
+    <div class="large-4 medium-4 small-12 cell"
+      <p>gallery placeholder</p>
+    </div>
+
+  </div>
+
+
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/js/foundation.min.js" integrity="sha256-Nd2xznOkrE9HkrAMi4xWy/hXkQraXioBg9iYsBrcFrs=" crossorigin="anonymous"></script> -->
+
+  <script src="../js/vendor/jquery.js"></script>
+  <script src="../js/vendor/foundation.js"></script>
+  <script src="../js/vendor/what-input.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

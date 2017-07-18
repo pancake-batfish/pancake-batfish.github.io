@@ -39,12 +39,12 @@
     <div class="large-8 medium-8 small-12 cell">
 
       <ol class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
-        <li class="accordion-item" data-accordion-item>
+        <!-- <li class="accordion-item" data-accordion-item>
           <a href="#" class="accordion-title">Test</a>
           <div class="accordion-content" data-tab-content>
             <p>holy crap this was more complicated than it seems like it should have been</p>
           </div>
-        </li>
+        </li> -->
 
         <li class="accordion-item" data-accordion-item>
           <a href="#" class="accordion-title">Backstory</a>
@@ -132,7 +132,7 @@
           <div class="accordion-content" data-tab-content>
             <p>I’ve built my own little flocking flock of creatures now, following Daniel Shiffman’s models, which are in turn built off Craig Reynolds’s algorithms.</p>
 
-            <iframe src="../bubbles/index.html" width="600px" height="400px"></iframe>
+            <iframe src="../creatures/index.html" width="600px" height="500px"></iframe>
 
             <p>This let me see how to write functions for some of Reynolds’s steering behaviors, such as seeking a target (where the object steers towards a target while correcting for its existing velocity) or arriving at a target (where the object will slow down as it nears the target to avoid overshooting). Other behaviors involve having the object consider its relationship to other nearby objects: in the function, I pass each boid or bird or bat or bug the array of all the other objects. Within the set of those that meet the parameter I define for being “nearby”, the object can steer to stay separated from them (calculating a vector opposite to the position of each nearby neighbor and steering in the direction of an average of these vectors weighted by neighbor distance) or to stay close to them (steering toward the average of neighbors’ positions, or more precisely, calling the seek function with the average position as the target). It can also align with the travel of nearby objects by steering in the direction of their average velocity.</p>
 
@@ -148,6 +148,48 @@
             <p>In general, though, I’m seeing that I should stay simple with the design of the creatures I’m trying to render, even though I tend to imagine wildly about what I want to make. In some ways, I think effects such as flocking are less hypnotic with too much going on with the objects. (I spent a stupid amount of time giving mine little oscillating wings, and I’m feeling like I might prefer just watching triangles.) My skills in computational drawing are currently limited but not really my focus for this project, so staying “big, bold and graphic” will also keep me more focused on exploring the behaviors of these systems and the possibilities for interacting with them rather than learning more about how to render.</p>
 
             <p>Now I want to implement some behaviors I haven’t seen models for!</p>
+          </div>
+        </li>
+
+        <li class="accordion-item" data-accordion-item>
+          <a href="#" class="accordion-title">Ants and noise</a>
+          <div class="accordion-content" data-tab-content>
+            <p>This <a class="inline" href="http://ngm.nationalgeographic.com/2007/07/swarms/miller-text/2" target="_blank">National Geographic article on “Swarm Theory”</a> suggested something to try next. The research it describes on red harvester ants in the Arizona desert proposes that ants inside the nest decide whether or not to go foraging outside the nest based on how frequently they encounter other ants returning (successfully) from foraging.</p>
+
+            <p>What I pictured seemed relatively simple: some ants inside a nest, some ants outside the nest, some available food for them to find. I started with a wander behavior, for which I needed to learn more about using Perlin noise, a computer graphics technique for producing more naturalistic textures for which Ken Perlin won an <a class="inline" href="http://mrl.nyu.edu/~perlin/doc/oscar.html" target="_blank">Oscar for Technical Achievement</a>. Perlin noise can also be used to create random-feeling yet still smooth motion; each successive value bears some relationship to the previous value rather than being truly, jarringly random. This part was already pretty satisfying — the ants when they’re moving look like…ants! Now I am starting to wonder if actual ants are tuned in somehow to Perlin noise.</p>
+
+            <p>As I started to dive deeper into the model, I realized I needed to do much more than I thought to make it work. The ants need to know if they’re in the nest or not, and they can’t cross the boundary of the nest unintentionally. They need to find food, pick it up, and come back to the nest with it, and then interact with each other to decide whether or not to go back out again. At this point I have ants seeking out the food and heading for the nest but then getting trapped in limbo, stuttering in back-and-forth motion because I haven’t turned off their behavior of seeking the food. So…back to it!</p>
+
+
+            <h4 class="subhead">Ecologist advice</h4>
+            <p>I told my classmate Erica about my project. She has a Ph.D. in ecology, and the ideas reminded her of some tools they’d used to simulate predator and prey relationships once upon a time in one of her classes. She remembered one in particular where rabbits ate grass and wolves or some other predator ate the rabbits. The simulated animals could only go so long without eating before they’d die, and once the grass ran out it was bad news for the rabbits (and subsequently for the wolves.) She’d programmed her version so the rabbits would go cannibalistic after the grass ran out, just to see how long that might extend the run of the simulation.</p>
+
+            <p>She also remembered a model related to creating corridors to connect fragmented wildlife habitat, in which habitat areas of different sizes were connected by straws and predators could move from one to another.</p>
+
+            <p>Immediately Erica wanted to see systems with stochastic elements introduced to make them interesting, possibly from real world natural patterns. For sure, creatures should die off, she said. And users should be able, ideally, to compare the results of one set of parameters to another, possibly through side-by-side graphs. And then there should be bees! That dance and communicate information to each other! I look forward to showing her something I’ve actually built to see what ideas she has for how to elaborate on it.</p>
+          </div>
+        </li>
+
+        <li class="accordion-item" data-accordion-item>
+          <a href="#" class="accordion-title">Baby's First Code Review!</a>
+          <div class="accordion-content" data-tab-content>
+            <p>Sometimes, for my own entertainment, I imagine someone keeping a baby book for me that extends far beyond the time limit in which babies and their accomplishments are generally considered interesting. Recent pages include “Baby’s First Ice Axe!” Future pages await for “Baby’s First Colonoscopy!”</p>
+
+            <p>So — not that my instructors haven’t looked at my code before, but this feels like the first time Kari’s looked at something she hasn’t herself fundamentally structured through the terms of an assignment. She’d agreed to do a review for me to help me meet my learning goal of working toward writing clean, well-structured code, and I came to a stopping point with my ants simulation, where I wanted to step back and think about how I’d organized it before elaborating it further.</p>
+
+            <p>It’s lovely — it is much more like an editor-author relationship than I had imagined. I see that she is stumbling where my intent wasn’t clear — and I see the kind of focus required to go in and read someone else’s code resembles the state of mind of reading a manuscript.</p>
+
+            <p>I’ve been delighting in and yet struggling with an idea I see in places like JavaScript: The Good Parts, by Douglas Crockford — he insists that JavaScript is a “very expressive” language.</p>
+
+            <p>What does that even mean, for a computer language to be expressive? And yet, when Kari’s reading my code, I realize I have tried to express something. And she’s trying to perceive what I’ve expressed. And my code sometimes accomplishes that and sometimes obscures it.</p>
+
+            <p>I’m still a relatively inexperienced object-oriented programmer, and I can see that the first way I tried giving different responsibilities to different objects can be improved. I have an ant object (and a colony object to help manage all the ants), and a nest object, and so there’s several options for how to write a function that detects where an ant is with respect to the nest — should the ant know the dimensions of the nest and when it has crossed them? Or is it better (Kari says yes) to pass the nest information about the ant and let the nest decide if the ant is inside or outside? There’s also conventions I’ve picked up from the tutorials I’ve been using that aren’t necessarily self-evident to a blank-slate observer, so it’s great to be challenged to think about them more objectively and whether I really want to adopt them or if I should try to establish a more clear and less convention-driven way of implementing the same code.</p>
+
+            <h4 class="subhead">Making p5.js play “extra nice”</h4>
+
+            <p>I’ve also taken some time to work on how I’m going to present this project — I’d started by using Jekyll, a tool for quickly generating static pages, as a way of quickly posting my code journal entries, but some experimentation and reading suggests that I might have an easier time just building my own journal page to join with my p5.js projects rather than making Jekyll work with the other things I’m trying to do. This also led to some initial exploration of how p5.js interacts with other objects on the page (through a special library for manipulating elements on the web page) and some recommendations from the p5.js wiki for how to make p5.js behave well in conjunction with other JavaScript libraries or when you want to use more than one sketch on a page at the same time. Essentially, the most approachable and simple way of using p5.js involves creating functions that are global — meaning they are accessible anywhere, rather than tucked away just inside the parts of the code that need them. If you want to stop, as the contributors to p5.js put it, “polluting the global namespace,” you can tuck your p5.js code inside a special p5 object and reduce your pollution.</p>
+
+            <p>I need to play a bit with the p5 tools for creating web page elements. For example, I’d kind of like my ants to just crawl right across my header with title and links, or at the least make them visible through a transparent header, but initial attempts suggest that there’s something I don’t yet understand about where the objects p5 is drawing fit within the hierarchy of the page. Either I’m not going about making things transparent in the right way, or it might be that I have to use the p5 tools for making my html in order to get the effect I want. We’ll see…</p>
           </div>
         </li>
 

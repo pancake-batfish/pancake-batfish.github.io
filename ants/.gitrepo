@@ -1,0 +1,11 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/pancake-batfish/ants.git
+	branch = master
+	commit = 7a08631d6ae4296fe8b64bcfde81dac8daa05dbf
+	parent = abe4f0ed56edbc583bb8e79eccc1fb885acc6534
+	cmdver = 0.3.1

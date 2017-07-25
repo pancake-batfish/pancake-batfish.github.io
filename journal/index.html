@@ -2,22 +2,8 @@
 <head>
   <meta charset="UTF-8">
   <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto|Roboto+Condensed|Roboto+Slab" rel="stylesheet">
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/css/foundation.min.css" integrity="sha256-itWEYdFWzZPBG78bJOOiQIn06QCgN/F0wMDcC4nOhxY=" crossorigin="anonymous" /> -->
   <link rel="stylesheet" href="../css/foundation.css" />
   <link rel="stylesheet" href="../css/main.css" />
-  <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script> -->
-  <!-- <script src="../js/vendor/jquery.js"></script>
-  <script src="../js/vendor/foundation.js"></script>
-  <script src="../js/vendor/what-input.js"></script>
-  <script src="../js/app.js"></script> -->
-
-  <!-- <script src= -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/js/foundation.min.js" integrity="sha256-Nd2xznOkrE9HkrAMi4xWy/hXkQraXioBg9iYsBrcFrs=" crossorigin="anonymous"></script> -->
-  <!-- <script language="javascript" type="text/javascript" src="libraries/p5.js"></script> -->
-  <!-- uncomment lines below to include extra p5 libraries -->
-  <!--<script language="javascript" src="libraries/p5.dom.js"></script>-->
-  <!-- <script language="javascript" src="libraries/p5.sound.js"></script> -->
-
 
   <!-- this line removes any default padding and style. you might only need one of these values set. -->
   <style> body {padding: 0; margin: 0;} </style>
@@ -33,10 +19,8 @@
       <a class="nav" href="../index.html">Home</a>
     </nav>
   </header>
-  <!-- <div class="row">
-    <div class="journal small-12 medium-8 columns"> -->
   <div class="grid-x grid-padding-x">
-    <div class="large-8 medium-8 small-12 cell">
+    <div class="large-8 medium-12 small-12 cell">
 
       <ol class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
         <!-- <li class="accordion-item" data-accordion-item>
@@ -171,7 +155,7 @@
         </li>
 
         <li class="accordion-item" data-accordion-item>
-          <a href="#" class="accordion-title">Baby's First Code Review!</a>
+          <a href="#" class="accordion-title">Baby's first code review!</a>
           <div class="accordion-content" data-tab-content>
             <p>Sometimes, for my own entertainment, I imagine someone keeping a baby book for me that extends far beyond the time limit in which babies and their accomplishments are generally considered interesting. Recent pages include “Baby’s First Ice Axe!” Future pages await for “Baby’s First Colonoscopy!”</p>
 
@@ -193,20 +177,39 @@
           </div>
         </li>
 
+        <li class="accordion-item" data-accordion-item>
+          <a href="#" class="accordion-title">State machine</a>
+          <div class="accordion-content" data-tab-content>
+            <p>My classmates have now started calling me “the ant lady” and sending me awesome <a href="  https://www.theverge.com/2017/7/12/15959386/fire-ants-tower-construction-rafts-tovey-collective-behavior-science" target="_blank">videos</a> from scientists at Georgia Tech making x-rays of fire ants crawling up a tower.</p>
+
+            <p>Meanwhile, I can’t seem to get the ant interactions I’ve scripted for the ants inside the nest to work, and the code has gotten too baroque for me to see where it’s failing. I’ve got too many behaviors being called inside this elaborate conditional that is supposed to be coordinating everything.</p>
+
+            <p>I asked Kai for help — he’s one of the T.A.s who volunteers at Ada. I tried to walk him through the whole sequence of things that was happening — or wasn’t happening — and he correctly identified that I didn’t really have a question, I was just coming to him with a kind of existential wail about how my code was sprawling and I couldn’t get my mind around it properly.</p>
+
+            <p>Unbeknownst to me, Kai has actually done some things with p5.js — he let me see the code he’d written for a reverse Space Invaders game enlivening the site for his company’s <a href="https://helloepics.com/" target="_blank">Hello Epics</a> extension to Trello.</p>
+
+            <p>In part, I think he wanted to demonstrate to me that I might just need to get comfortable with a certain amount of sprawl in my Javascript. He’d also used the <a href="http://p5play.molleindustria.org/" target="_blank">p5.play</a> library, which has tools to make a number of elements of game-building easier. In particular, you can define sprites which have positions and velocities, belong to groups, and know when they’ve collided or overlapped with other objects.</p>
+
+
+            <p>We also talked about the idea of a state machine — he’d encapsulated big-picture states of his game (attracting, playing, winning, losing), but I realized I could solve a number of problems by classifying my ants as being in different states (for example, ants need to stay outside the boundary of the nest when they are searching for food, but need to be able to cross it when they are returning to the nest), and that it might also clarify my thinking about what behaviors are happening when.</p>
+
+            <p>I started a new branch and tried to simplify my code, commenting out large swaths of it to try and just look at one behavior at a time to see if they were operating as expected. But biting the bullet and refactoring it in terms of state seems to have been even more helpful. I don’t have all my intended behaviors working yet, but I think the conditional and each state’s associated functions are easier to follow in the code, and I’m finding as I work to debug it that I’m better able to see where the problems are. Right now I have just one little ant in the system, and I can log its state as I stare at it moving around the screen, waiting for it to find some food and head into the nest — aha! its state changes as it initially crosses the nest boundary, but it doesn’t make it inside the nest boundary all the way and now it never will because it is in the wrong state.</p>
+
+            <p>I also feel like it is easier in this structure to write simpler versions of the behaviors but put a pin in them to come back and add nuance once the rough set of transitions from state to state is working.</p>
+
+            <p>Onward and upward.</p>
+          </div>
+        </li>
+
 
       </ol>
     </div>
 
-    <!-- <div class="gallery small-12 medium-4 columns"> -->
-    <div class="large-4 medium-4 small-12 cell"
+    <div class="large-4 medium-12 small-12 cell"
       <p>gallery placeholder</p>
     </div>
 
   </div>
-
-
-    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/js/foundation.min.js" integrity="sha256-Nd2xznOkrE9HkrAMi4xWy/hXkQraXioBg9iYsBrcFrs=" crossorigin="anonymous"></script> -->
 
   <script src="../js/vendor/jquery.js"></script>
   <script src="../js/vendor/foundation.js"></script>

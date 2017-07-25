@@ -8,14 +8,20 @@ less serious red #c42415*/
 /*--------------------------
 typography
 ---------------------------*/
-#title {
-  font-family: 'Permanent Marker', cursive;
+#titleText, a.nav {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.3em;
+}
+
+#keywords {
+  color: #e02716;
 }
 a {
   color: #859e4b;
 }
 a.nav {
-  font-family: 'Permanent Marker', cursive;
+  font-size: 1.1em;
   text-decoration: none;
   color: black;
 }
@@ -31,20 +37,22 @@ p, a.inline {
 /*--------------------------
 header
 ---------------------------*/
-header {
+
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+
+  /*z-index: -1;*/
+}
+
+.title {
   margin-left: 10px;
+}
+
+nav {
   margin-right: 30px;
-  background-color: white;
-  /*-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-    filter: alpha(opacity=80);
-    -moz-opacity: 0.80;
-    -khtml-opacity: 0.8;
-    opacity: 0.8;*/
-    /*rgba(255, 255, 255, 0.1);*/
-    /*z-index: -1;*/
 }
 
 iframe {

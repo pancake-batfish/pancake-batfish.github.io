@@ -184,12 +184,11 @@
 
             <p>Meanwhile, I can’t seem to get the ant interactions I’ve scripted for the ants inside the nest to work, and the code has gotten too baroque for me to see where it’s failing. I’ve got too many behaviors being called inside this elaborate conditional that is supposed to be coordinating everything.</p>
 
-            <p>I asked Kai for help — he’s one of the T.A.s who volunteers at Ada. I tried to walk him through the whole sequence of things that was happening — or wasn’t happening — and he correctly identified that I didn’t really have a question, I was just coming to him with a kind of existential wail about how my code was sprawling and I couldn’t get my mind around it properly.</p>
+            <p>I asked Kai for help — he’s one of the TAs who volunteers at Ada. I tried to walk him through the whole sequence of things that was happening — or wasn’t happening — and he correctly identified that I didn’t really have a question, I was just coming to him with a kind of existential wail about how my code was sprawling and I couldn’t get my mind around it properly.</p>
 
             <p>Unbeknownst to me, Kai has actually done some things with p5.js — he let me see the code he’d written for a reverse Space Invaders game enlivening the site for his company’s <a href="https://helloepics.com/" target="_blank">Hello Epics</a> extension to Trello.</p>
 
             <p>In part, I think he wanted to demonstrate to me that I might just need to get comfortable with a certain amount of sprawl in my Javascript. He’d also used the <a href="http://p5play.molleindustria.org/" target="_blank">p5.play</a> library, which has tools to make a number of elements of game-building easier. In particular, you can define sprites which have positions and velocities, belong to groups, and know when they’ve collided or overlapped with other objects.</p>
-
 
             <p>We also talked about the idea of a state machine — he’d encapsulated big-picture states of his game (attracting, playing, winning, losing), but I realized I could solve a number of problems by classifying my ants as being in different states (for example, ants need to stay outside the boundary of the nest when they are searching for food, but need to be able to cross it when they are returning to the nest), and that it might also clarify my thinking about what behaviors are happening when.</p>
 
@@ -201,12 +200,30 @@
           </div>
         </li>
 
+        <li class="accordion-item" data-accordion-item>
+          <a href="#" class="accordion-title">Debugging bugs in the bugs</a>
+          <div class="accordion-content" data-tab-content>
+            <p>AND THEN, when I was drawing out my state machine diagram for my mentor Qifan, who works upstairs from Ada, he told me that often in games developers might use a special debugging mode with color corresponding to state as a way of visualizing what’s going on with many agents at once.</p>
+
+            <p>Oh, it’s the coolest thing! I added a debug mode  in which blue identifies ants outside the nest foraging, light purple shows ants “seeking food” (meaning they’ve detected a food target but haven’t gotten to it yet), and darker purple indicates ants with food returning to the nest. Once inside the nest, ants wandering around are in a red-orange “interacting” state. When an ant without food detects another ant, it transitions to a lighter orange “seeking ant” state, and steers toward that ant. If the seeking ant gets close enough to another ant who has food, it will change to a yellow “exiting” state and head out of the nest and back to foraging again.</p>
+
+            <p>Suddenly all my many code problems were visible! (OK, maybe not all my problems, but a lot of them.) I could see orange ants wandering around outside the nest, meaning they’d gotten outside the boundary without properly changing state. Correspondingly, there were ants in foraging mode who had ended up in the nest and would never hit the right conditions to change state. I added some code under each of these states to check if the ants were inside or outside the nest and flip the state if necessary — TA Chef tells me there’s often a whole validation function to run through all the objects and make sure they meet the conditions for the state they’re supposedly in.</p>
+
+            <p>Meanwhile, if I added enough ants and food to the system (now possible with the up arrow and space bar, respectively), eventually I’d see a couple of light purple ants spinning out: getting trapped in a spot on the screen and changing the direction they were pointing without leaving that position. It turns out I hadn’t written anything to deal with conflicts when two ants were aiming for the same piece of food, and the spinners were the poor ants who didn’t get there in time and were condemned to spend eternity seeking a target that wasn’t there. I added some code to set them free.</p>
+
+            <p>I could also see that I needed to work on my boundary conditions. While the other four states are repelled by the boundary, keeping them either inside or outside the nest, returning and exiting ants are supposed to be able to pass through. However, little purple and yellow ants were sometimes getting caught just at the crossing, changing state as programmed but then flickering back and forth for a bit and sometimes not ending up on the intended side of the line. After trying a number of fixes (one of which, entertainingly if not effectively, got ALL the ants stuck to the nest boundary like flies on flypaper), I added a time delay to the state transition for ants crossing the boundary — this seems to get them past the point where they get into boundary trouble as a result of their new state.</p>
+
+            <p>Also, it’s possible I might have gotten tired of looking at the ants by now, but the rainbow colors make everything wild and exciting again…</p>
+
+          </div>
+        </li>
+
 
       </ol>
     </div>
 
     <div class="large-4 medium-12 small-12 cell"
-      <p>gallery placeholder</p>
+      <p>[gallery placeholder]</p>
     </div>
 
   </div>

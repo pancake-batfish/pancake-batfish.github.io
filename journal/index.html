@@ -22,13 +22,9 @@
   <div class="grid-x grid-padding-x">
     <div class="large-8 medium-12 small-12 cell">
 
+      <p>This project, which uses the nifty <a href="https://p5js.org/" target="_blank">p5.js</a> library, is an exploration of ideas about simulating natural systems laid out by Daniel Shiffman in his book <a href="http://natureofcode.com/book/" target="_blank">The Nature of Code</a> as well as in about a million <a href="https://www.youtube.com/user/shiffman" target="_blank">videos</a>. The code journal entries below offer a (possibly long-winded) take on process as a way of giving some context for the result…but perhaps it’s better to just watch the ants doing their little anty things and not think about it too much!</p>
+
       <ol class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
-        <!-- <li class="accordion-item" data-accordion-item>
-          <a href="#" class="accordion-title">Test</a>
-          <div class="accordion-content" data-tab-content>
-            <p>holy crap this was more complicated than it seems like it should have been</p>
-          </div>
-        </li> -->
 
         <li class="accordion-item" data-accordion-item>
           <a href="#" class="accordion-title">Backstory</a>
@@ -163,17 +159,11 @@
 
             <p>It’s lovely — it is much more like an editor-author relationship than I had imagined. I see that she is stumbling where my intent wasn’t clear — and I see the kind of focus required to go in and read someone else’s code resembles the state of mind of reading a manuscript.</p>
 
-            <p>I’ve been delighting in and yet struggling with an idea I see in places like JavaScript: The Good Parts, by Douglas Crockford — he insists that JavaScript is a “very expressive” language.</p>
+            <p>I’ve been delighting in and yet struggling with an idea I see in places like <em>JavaScript: The Good Parts</em>, by Douglas Crockford — he insists that JavaScript is a “very expressive” language.</p>
 
             <p>What does that even mean, for a computer language to be expressive? And yet, when Kari’s reading my code, I realize I have tried to express something. And she’s trying to perceive what I’ve expressed. And my code sometimes accomplishes that and sometimes obscures it.</p>
 
             <p>I’m still a relatively inexperienced object-oriented programmer, and I can see that the first way I tried giving different responsibilities to different objects can be improved. I have an ant object (and a colony object to help manage all the ants), and a nest object, and so there’s several options for how to write a function that detects where an ant is with respect to the nest — should the ant know the dimensions of the nest and when it has crossed them? Or is it better (Kari says yes) to pass the nest information about the ant and let the nest decide if the ant is inside or outside? There’s also conventions I’ve picked up from the tutorials I’ve been using that aren’t necessarily self-evident to a blank-slate observer, so it’s great to be challenged to think about them more objectively and whether I really want to adopt them or if I should try to establish a more clear and less convention-driven way of implementing the same code.</p>
-
-            <h4 class="subhead">Making p5.js play “extra nice”</h4>
-
-            <p>I’ve also taken some time to work on how I’m going to present this project — I’d started by using Jekyll, a tool for quickly generating static pages, as a way of quickly posting my code journal entries, but some experimentation and reading suggests that I might have an easier time just building my own journal page to join with my p5.js projects rather than making Jekyll work with the other things I’m trying to do. This also led to some initial exploration of how p5.js interacts with other objects on the page (through a special library for manipulating elements on the web page) and some recommendations from the p5.js wiki for how to make p5.js behave well in conjunction with other JavaScript libraries or when you want to use more than one sketch on a page at the same time. Essentially, the most approachable and simple way of using p5.js involves creating functions that are global — meaning they are accessible anywhere, rather than tucked away just inside the parts of the code that need them. If you want to stop, as the contributors to p5.js put it, “polluting the global namespace,” you can tuck your p5.js code inside a special p5 object and reduce your pollution.</p>
-
-            <p>I need to play a bit with the p5 tools for creating web page elements. For example, I’d kind of like my ants to just crawl right across my header with title and links, or at the least make them visible through a transparent header, but initial attempts suggest that there’s something I don’t yet understand about where the objects p5 is drawing fit within the hierarchy of the page. Either I’m not going about making things transparent in the right way, or it might be that I have to use the p5 tools for making my html in order to get the effect I want. We’ll see…</p>
           </div>
         </li>
 

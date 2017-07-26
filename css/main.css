@@ -1,10 +1,7 @@
-/*font-family: 'Roboto Slab', serif;
-font-family: 'Roboto', sans-serif;
-font-family: 'Roboto Condensed', sans-serif;*/
-
 /*green #859e4b
 serious red #e02716
-less serious red #c42415*/
+less serious red #c42415
+grey #afafae;*/
 /*--------------------------
 typography
 ---------------------------*/
@@ -18,23 +15,28 @@ typography
   color: #e02716;
 }
 a {
-  color: #859e4b;
+  /*color: #859e4b;*/
+  /*color: #afafae;*/
+  /*color: #c42415;*/
+  /*color: #713029;*/
+  color: rgba(225, 39, 22, 1)
 }
 a.nav {
   font-size: 1.2em;
   text-decoration: none;
   color: black;
 }
-a:hover {
-  color: #e02716;
+a:hover, a:visited {
+  /*color: #e02716;*/
+  color: rgba(225, 39, 22, .4)
 }
 h1, h2, h3, h4 {
-  /*font-family: 'Roboto Condensed', sans-serif;*/
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-
+}
+h4 {
+  font-size: 1.3em;
 }
 p, a.inline {
-  /*font-family: 'Roboto', sans-serif;*/
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 }
@@ -84,7 +86,6 @@ a.accordion-title {
 :last-child:not(.is-active) > .accordion-title {
   border-bottom: none;
   margin-bottom: 20px;
-  /*border-radius: 0 0 0 0; */
 }
 iframe {
   border: none;

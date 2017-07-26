@@ -1,7 +1,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto|Roboto+Condensed|Roboto+Slab" rel="stylesheet">
+  <link
   <link rel="stylesheet" href="../css/foundation.css" />
   <link rel="stylesheet" href="../css/main.css" />
   <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
@@ -128,7 +128,7 @@
 
             <p>Currently, when you refresh the browser, the sliders are also reset — ideally, it’d be good to be able to restart the system with a user's chosen weighting for the behaviors to see it play out from an initial random distribution. Also, there’s a few other values that it might be nice to be able to alter from the browser (rather than just changing the hard-coded values in the code), including the maximum creature speed and the total number of creatures in the system. The effect of each of the collective functions hinges on a value that determines the distance at which another object is considered a “neighbor” and is factored into the calculation, and it might be nice to be able to play easily with these values as well.</p>
 
-            <h4 class="subhead">Some other thoughts</h4>
+            <h4 class="subhead">Transformations</h4>
             <p>When I first started playing with these tools, I didn’t understand at all how to make a shape like a triangle travel in the direction of its point! Once I could see from the code examples how to do it, I realized there was a whole (cool) area of p5.js I needed to learn more about: it lets you make transformations of the underlying coordinate system when drawing to avoid having to do the (ugly) math of rendering moving, spinning objects on a fixed grid. You can translate the origin to be wherever would be convenient, and rotate to a convenient orientation — in other words, you don’t make the little triangle point in the direction it’s moving; you rotate space so that “straight ahead” is the relevant direction. It’s lovely.</p>
 
             <p>In general, though, I’m seeing that I should stay simple with the design of the creatures I’m trying to render, even though I tend to imagine wildly about what I want to make. In some ways, I think effects such as flocking are less hypnotic with too much going on with the objects. (I spent a stupid amount of time giving mine little oscillating wings, and I’m feeling like I might prefer just watching triangles.) My skills in computational drawing are currently limited but not really my focus for this project, so staying “big, bold and graphic” will also keep me more focused on exploring the behaviors of these systems and the possibilities for interacting with them rather than learning more about how to render.</p>

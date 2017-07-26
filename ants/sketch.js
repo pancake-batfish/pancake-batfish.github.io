@@ -5,7 +5,9 @@ const NORMAL = "normal";
 var mode = NORMAL;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  var canvas = createCanvas(windowWidth, windowHeight);
+  canvas.parent('sketchHolder');
+  background(255, 0, 200);
   colony = new Colony();
   colony.establish();
   var foodCount = 20;

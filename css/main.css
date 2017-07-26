@@ -64,6 +64,14 @@ header
     visibility: hidden;
   }
 }
+#mainHeader {
+  z-index: 99;
+  position: relative;
+}
+#sketchHolder {
+  z-index: 1;
+  position: absolute;
+}
 
 .journal {
   margin-top: 20px;

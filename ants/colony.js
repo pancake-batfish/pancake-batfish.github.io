@@ -5,7 +5,7 @@ function Colony() {
   this.establish = function() {
     var nestDiameter = 200;
     var nestRotation = 45;
-    var nestPosition = createVector(nestDiameter/2 + 50, height/6);
+    var nestPosition = createVector(nestDiameter/2 + 50, height/6 + 80);
 
     nest = new Nest(nestPosition.x, nestPosition.y, nestDiameter, radians(nestRotation));
 

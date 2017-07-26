@@ -61,7 +61,8 @@ header
 
 @media screen and (max-width: 500px) {
   #instructions {
-    visibility: hidden;
+    /*visibility: hidden;*/
+    display: none;
   }
 }
 #mainHeader {

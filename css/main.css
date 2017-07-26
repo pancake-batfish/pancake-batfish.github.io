@@ -15,20 +15,19 @@ typography
   color: #e02716;
 }
 a {
-  /*color: #859e4b;*/
-  /*color: #afafae;*/
-  /*color: #c42415;*/
-  /*color: #713029;*/
   color: rgba(225, 39, 22, 1)
+}
+
+a:hover, a:visited {
+  color: rgba(225, 39, 22, .4)
 }
 a.nav {
   font-size: 1.2em;
   text-decoration: none;
   color: black;
 }
-a:hover, a:visited {
-  /*color: #e02716;*/
-  color: rgba(225, 39, 22, .4)
+a.nav:hover {
+  color: rgba(225, 39, 22, 1)
 }
 h1, h2, h3, h4 {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -53,6 +52,7 @@ header
 
 .journal {
   margin-top: 20px;
+  max-width: 780px;
 }
 
 .title {

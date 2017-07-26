@@ -49,6 +49,15 @@ header
   align-items: center;
   background: rgba(255, 255, 255, 0.1);
 }
+#instructions {
+  border: solid 1px #afafae;
+  border-radius: 25px;
+}
+#instructions p {
+  color: #afafae;
+  font-size: .7em;
+  padding: 0px 10px;
+}
 
 .journal {
   margin-top: 20px;

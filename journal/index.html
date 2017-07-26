@@ -95,7 +95,9 @@
 
             <p>One trial sketch features bubbles that rise from a nozzle (for interest, I ended up putting in two nozzles).</p>
 
-            <iframe src="../bubbles/index.html" width="600px" height="400px"></iframe>
+            <div class="iframe-container">
+              <iframe src="../bubbles/index.html" width="600px" height="450px"></iframe>
+            </div>
 
             <p>The bubbles are generated within the draw function of the main sketch by a makeBubble function that effectively serves to control the pace of new bubble creation with a call to a random number function — if the value is under a certain threshold (currently .4, which should average out to 40% of the time), the function will make a new Bubble object and push it onto the sketch’s array of bubbles. (Without this function, the bubbles are generated too quickly and are too dense on the screen.) A clearBubbles function removes bubbles from the array once their position is beyond the boundaries of the canvas.</p>
 
@@ -120,7 +122,9 @@
           <div class="accordion-content" data-tab-content>
             <p>I’ve built my own little flocking flock of creatures now, following Daniel Shiffman’s models, which are in turn built off Craig Reynolds’s algorithms.</p>
 
-            <iframe src="../creatures/index.html" width="600px" height="500px"></iframe>
+            <div class="iframe-container">
+              <iframe src="../creatures/index.html" width="600px" height="450px"></iframe>
+            </div>
 
             <p>This let me see how to write functions for some of Reynolds’s steering behaviors, such as seeking a target (where the object steers towards a target while correcting for its existing velocity) or arriving at a target (where the object will slow down as it nears the target to avoid overshooting). Other behaviors involve having the object consider its relationship to other nearby objects: in the function, I pass each boid or bird or bat or bug the array of all the other objects. Within the set of those that meet the parameter I define for being “nearby”, the object can steer to stay separated from them (calculating a vector opposite to the position of each nearby neighbor and steering in the direction of an average of these vectors weighted by neighbor distance) or to stay close to them (steering toward the average of neighbors’ positions, or more precisely, calling the seek function with the average position as the target). It can also align with the travel of nearby objects by steering in the direction of their average velocity.</p>
 

@@ -5,7 +5,7 @@ var separationSlider;
 var alignmentSlider;
 
 function setup() {
-  var canvas = createCanvas(600, 400);
+  var canvas = createCanvas(600, 350);
   canvas.parent('canvas');
 
   cohesionSlider = createSlider(0, 5, 1, 0.1).parent('cohesion');

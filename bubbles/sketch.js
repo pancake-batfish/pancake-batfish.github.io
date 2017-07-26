@@ -6,7 +6,7 @@ var anticurrent;
 
 
 function setup() {
-  createCanvas(600, 400);
+  createCanvas(600, 450);
   // createCanvas(windowWidth, windowHeight);
   // createCanvas(displayWidth, displayHeight);
   nozzle1 = new Nozzle(width/3, height);
